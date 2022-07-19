@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: monitoring
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
